@@ -35,18 +35,35 @@ class PostCard extends StatelessWidget {
           Positioned(
             top: 15,
             left: 15,
-            child: Row(
-              children: [
-                Icon(Icons.category, size: 16, color: Colors.white),
-                SizedBox(width: 5),
-                Text(
-                  category,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+            child: Container(
+              width: 80,
+              height: 30,
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black),
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black38,
+                      blurStyle: BlurStyle.inner,
+                    ),
+                  ]),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.category,
+                    size: 16,
                     color: Colors.white,
                   ),
-                ),
-              ],
+                  SizedBox(width: 5),
+                  Text(
+                    category,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           Positioned(
@@ -69,9 +86,14 @@ class PostCard extends StatelessWidget {
             bottom: 15,
             child: Row(
               children: [
-                CircleAvatar(
-                  backgroundImage: AssetImage(userImage),
-                  radius: 20,
+                Container(
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(width: 1, color: Colors.red)),
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage(userImage),
+                    radius: 20,
+                  ),
                 ),
                 SizedBox(width: 8),
                 Column(

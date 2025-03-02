@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../view_modal/generalProvider/generalController.dart';
+import '../../../widgets/customBottomNav/custom_bottom_nav.dart';
 import '../../../widgets/postCard/post_card.dart';
 import '../../../widgets/story_widget/story.dart';
 import '../../../widgets/story_widget/story_widget.dart';
 import '../../../widgets/tabWidget/custom_tab_bar.dart';
+import '../matchScreen/match__screen.dart';
 
 class StoryScreen extends StatelessWidget {
   @override
@@ -13,16 +15,20 @@ class StoryScreen extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          title: Text(
+            "Friends",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Text(
-                "Friends",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-              ),
-            ),
             SizedBox(height: 10),
             SizedBox(
               height: 120,
@@ -77,6 +83,7 @@ class StoryScreen extends StatelessWidget {
                 ],
               ),
             ),
+            CustomBottomNav(),
           ],
         ),
       ),

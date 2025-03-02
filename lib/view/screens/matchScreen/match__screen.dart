@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../widgets/postCard/post_card.dart';
+import 'package:fluttertest/widgets/matchCard/match_card.dart';
+
+import '../../../widgets/customBottomNav/custom_bottom_nav.dart';
 
 class MatchScreen extends StatelessWidget {
   @override
@@ -27,8 +29,7 @@ class MatchScreen extends StatelessWidget {
                 border: Border.all(color: Colors.black),
                 shape: BoxShape.circle,
               ),
-              child:
-                  Icon(Icons.notifications_none_outlined, color: Colors.black),
+              child: Icon(Icons.settings, color: Colors.black),
             ),
           ),
         ],
@@ -48,21 +49,67 @@ class MatchScreen extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: ListView(
-              padding: EdgeInsets.all(16),
-              children: [
-                PostCard(
-                  imageUrl: "assets/images/profileimage.png",
-                  category: "Travel",
-                  question:
-                      "If you could live anywhere in the world, where would you pick?",
-                  userName: "Miranda Kehlani",
-                  location: "Stuttgart",
-                  userImage: "assets/images/profileimage.png",
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Wrap(
+                  spacing: 20,
+                  runSpacing: 20,
+                  children: [
+                    MatchCard(
+                      imageUrl: 'assets/images/image.jpg',
+                      name: 'name',
+                      age: 2,
+                      location: 'location',
+                      matchPercentage: 2,
+                      distance: 3,
+                    ),
+                    MatchCard(
+                      imageUrl: 'assets/images/image.jpg',
+                      name: 'Shahzaib',
+                      age: 2,
+                      location: 'location',
+                      matchPercentage: 2,
+                      distance: 3,
+                    ),
+                    MatchCard(
+                      imageUrl: 'assets/images/image.jpg',
+                      name: 'name',
+                      age: 2,
+                      location: 'location',
+                      matchPercentage: 2,
+                      distance: 3,
+                    ),
+                    MatchCard(
+                      imageUrl: 'assets/images/image.jpg',
+                      name: 'name',
+                      age: 2,
+                      location: 'location',
+                      matchPercentage: 2,
+                      distance: 3,
+                    ),
+                    MatchCard(
+                      imageUrl: 'assets/images/image.jpg',
+                      name: 'name',
+                      age: 2,
+                      location: 'location',
+                      matchPercentage: 2,
+                      distance: 3,
+                    ),
+                    MatchCard(
+                      imageUrl: 'assets/images/image.jpg',
+                      name: 'name',
+                      age: 2,
+                      location: 'location',
+                      matchPercentage: 2,
+                      distance: 3,
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
+          CustomBottomNav(),
         ],
       ),
     );
